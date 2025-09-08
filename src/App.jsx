@@ -1,14 +1,13 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import Cart from './pages/Cart'
-import Home from './pages/Home'
-import Shop from './pages/Shop'
+import { Outlet } from 'react-router'
 
 function App() {
 
   return (
     <div>
       <Navbar></Navbar>
+      <Outlet />
     </div>
   )
 }
