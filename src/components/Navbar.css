@@ -18,3 +18,7 @@ ul{
 li{
     list-style: none;
 }
+
+h2{
+    cursor: pointer;
+}
