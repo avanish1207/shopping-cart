@@ -48,26 +48,28 @@ function Shop() {
                 <div>{item.title}</div>
                 <div>${item.price}</div>
               </div>
-              <div className="quantity-controls">
-                <button onClick={()=>handleQuantityChange(item.id, quantities[item.id] - 1)} disabled={quantities[item.id<=1]}>-</button>
-                <input 
-                  type="number" 
-                  min="1" 
-                  value={quantities[item.id] || 1}
-                  onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
-                />
-                <button 
-                  onClick={() => handleQuantityChange(item.id, quantities[item.id] + 1)}
+              <div className="cart-settings">
+                <div className="quantity-controls">
+                  <button onClick={()=>handleQuantityChange(item.id, quantities[item.id] - 1)} disabled={quantities[item.id<=1]}>-</button>
+                  <input
+                    type="number"
+                    min="1"
+                    value={quantities[item.id] || 1}
+                    onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
+                  />
+                  <button
+                    onClick={() => handleQuantityChange(item.id, quantities[item.id] + 1)}
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  className="add-to-cart-btn"
+                  onClick={() => handleAddToCart(item)}
                 >
-                  +
+                  Add {quantities[item.id]} to Cart
                 </button>
               </div>
-              <button 
-                className="add-to-cart-btn"
-                onClick={() => handleAddToCart(item)}
-              >
-                Add {quantities[item.id]} to Cart
-              </button>
             </div>
           ))
         }
