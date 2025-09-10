@@ -5,7 +5,7 @@ const CartContext=createContext();
 export const CartProvider=({children})=>{
     const [cartItems, setCartItems]=useState([]);
 
-    const addToCart=(product, quantity=1){
+    const addToCart=(product, quantity=1)=>{
         setCartItems(prevItems=>{
             const existingItem=prevItems.find(item=>item.id===product.id);
             if(existingItem){
@@ -15,6 +15,12 @@ export const CartProvider=({children})=>{
             } else{
                 return [...prevItems, {...product, quantity}];
             }
+        });
+    }
+
+    const removeFromCart=(productId)=>{
+        setCartItems(prevItems=>{
+            prevItems.filter(item=>item.id!==productId);
         })
     }
 
