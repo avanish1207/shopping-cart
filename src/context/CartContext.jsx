@@ -20,7 +20,7 @@ export const CartProvider=({children})=>{
 
     const removeFromCart=(productId)=>{
         setCartItems(prevItems=>{
-            prevItems.filter(item=>item.id!==productId);
+            return prevItems.filter(item=>item.id!==productId);
         })
     }
 
@@ -30,7 +30,7 @@ export const CartProvider=({children})=>{
             return;
         }
         setCartItems(prevItems=>{
-            prevItems.map(item=>item.id===productId?{...item, quantity:newQuantity}:item);
+            return prevItems.map(item=>item.id===productId?{...item, quantity:newQuantity}:item);
         });
     }
 
