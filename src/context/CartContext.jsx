@@ -40,6 +40,11 @@ export const CartProvider=({children})=>{
         ).toFixed(2);
     };
 
+    const getTotalItems = () => {
+        return cartItems.reduce((total, item) => 
+        total + item.quantity, 0
+        );
+    };
 
     const value={
         cartItems, setCartItems
