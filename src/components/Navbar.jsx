@@ -17,9 +17,8 @@ function Navbar() {
         <h2 onClick={goHome}>ShopEasy</h2>
         <nav>
             <ul>
-                <li><Link to="cart">Cart</Link></li>
-                <li><Link to="home">Home</Link></li>
-                <li><Link to="shop">Shop</Link></li>
+                <li><Link to="shop" className="nav-link">Shop</Link></li>
+                <li><Link to="cart" className="nav-link">Cart</Link></li>
             </ul>
         </nav>
         </div>
