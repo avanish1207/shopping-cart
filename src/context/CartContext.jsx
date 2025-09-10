@@ -24,6 +24,16 @@ export const CartProvider=({children})=>{
         })
     }
 
+    const updateQuantity=(productId, newQuantity)=>{
+        if(newQuantity<0){
+            removeFromCart(productId);
+            return;
+        }
+        setCartItems(prevItems=>{
+            prevItems.map(item=>item.id===productId?{...item, quantity:newQuantity}:item);
+        });
+    }
+
     const value={
         cartItems, setCartItems
     };
